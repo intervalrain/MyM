@@ -9,6 +9,45 @@
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Common\" />
+    <None Remove="Common\Interfaces\" />
+    <None Remove="Common\Interfaces\Persistence\" />
+    <None Remove="Services\" />
+    <None Remove="Services\Commands\" />
+    <None Remove="Services\Queries\" />
+    <None Remove="Services\Events\" />
+    <None Remove="Common\Behaviors\" />
+    <None Remove="Common\Security\" />
+    <None Remove="Common\Security\Request\" />
+    <None Remove="Common\Security\Roles\" />
+    <None Remove="Common\Security\Policies\" />
+    <None Remove="Common\Security\Permissions\" />
+    <None Remove="Common\Security\User\" />
+    <None Remove="Services\Commands\CreateTransaction\" />
+    <None Remove="Services\Queries\FetchAllTransactions\" />
+    <None Remove="Services\Queries\GetTransaction\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Common\Interfaces\" />
+    <Folder Include="Common\Interfaces\Persistence\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Commands\" />
+    <Folder Include="Services\Queries\" />
+    <Folder Include="Services\Events\" />
+    <Folder Include="Common\Behaviors\" />
+    <Folder Include="Common\Security\" />
+    <Folder Include="Common\Security\Request\" />
+    <Folder Include="Common\Security\Roles\" />
+    <Folder Include="Common\Security\Policies\" />
+    <Folder Include="Common\Security\Permissions\" />
+    <Folder Include="Common\Security\User\" />
+    <Folder Include="Dtos\" />
+    <Folder Include="Services\Commands\CreateTransaction\" />
+    <Folder Include="Services\Queries\FetchAllTransactions\" />
+    <Folder Include="Services\Queries\GetTransaction\" />
+  </ItemGroup>
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>

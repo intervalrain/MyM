@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using MediatR;
 using MyMoney.Domain;
 using MyMoney.Domain.Common;
@@ -13,8 +12,9 @@ public class AppDbContext : DbContext
     private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly IPublisher _publisher;
 
-    public DbSet<Transaction> Transactions { get; set; } = null!;
-	public DbSet<Category> Categories { get; set; } = null!;
+    public DbSet<User> Users { get; set; } = null!; 
+	public DbSet<Account> Accounts{ get; set; } = null!;
+    public DbSet<Transaction> Transactions { get; set; } = null!;    
 
     public AppDbContext(DbContextOptions options, IHttpContextAccessor httpContextAccessor, IPublisher publisher)
         : base(options)

@@ -25,11 +25,17 @@
     <None Remove="Common\" />
     <None Remove="Common\Persistence\" />
     <None Remove="Common\Middleware\" />
+    <None Remove="Persistence\" />
+    <None Remove="Common\Services\" />
+    <None Remove="Security\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
     <Folder Include="Common\Persistence\" />
     <Folder Include="Common\Middleware\" />
+    <Folder Include="Persistence\" />
+    <Folder Include="Common\Services\" />
+    <Folder Include="Security\" />
   </ItemGroup>
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
