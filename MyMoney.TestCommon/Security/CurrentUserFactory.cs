@@ -1,4 +1,5 @@
 ﻿using MyMoney.Application.Common.Security.User;
+using MyMoney.Infrastructure.Security;
 using MyMoney.TestCommon.TestConstants;
 
 namespace MyMoney.TestCommon.Security;
@@ -13,8 +14,6 @@ public static class CurrentUserFactory
         List<string> permissions = null!,
         List<string> roles = null!)
     {
-        var permissionPervider = new TestPermissionProvider();
-
         return new CurrentUser(
             Id: id ?? Constants.User.UserId,
             FirstName: firstName ?? Constants.User.FirstName,

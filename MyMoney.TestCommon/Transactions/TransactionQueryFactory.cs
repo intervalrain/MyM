@@ -1,5 +1,5 @@
-﻿using MyMoney.Application.Services;
-using MyMoney.Application.Services.FetchAllTransactions.Queries;
+﻿using MyMoney.Application;
+using MyMoney.Application.Transactions.FetchAllTransactions.Queries;
 using MyMoney.TestCommon.TestConstants;
 
 namespace MyMoney.TestCommon.Transactions;

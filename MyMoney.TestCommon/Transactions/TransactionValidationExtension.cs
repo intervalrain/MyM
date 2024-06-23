@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 
 using MyMoney.Application.Dtos;
-using MyMoney.Application.Services.CreateTransaction.Commands;
+using MyMoney.Application.Transactions.CreateTransaction.Commands;
 
 namespace MyMoney.TestCommon.Transactions;
 

@@ -9,7 +9,7 @@ using MediatR;
 
 using MyMoney.Application.Common.Behaviors;
 using MyMoney.Application.Dtos;
-using MyMoney.Application.Services.CreateTransaction.Commands;
+using MyMoney.Application.Transactions.CreateTransaction.Commands;
 using MyMoney.TestCommon.Transactions;
 
 using NSubstitute;

@@ -1,5 +1,5 @@
-﻿using MyMoney.Application.Services;
-using MyMoney.Application.Services.CreateTransaction.Commands;
+﻿using MyMoney.Application;
+using MyMoney.Application.Transactions.CreateTransaction.Commands;
 using MyMoney.TestCommon.TestConstants;
 
 namespace MyMoney.TestCommon.Transactions;

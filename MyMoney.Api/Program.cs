@@ -8,6 +8,11 @@ var builder = WebApplication.CreateBuilder(args);
         .AddApplication()
         .AddPresentation()
         .AddInfrastructure(builder.Configuration);
+
+    if (builder.Environment.IsDevelopment())
+    {
+        builder.Configuration.AddUserSecrets<Program>();
+    }
 }
 
 var app = builder.Build();
@@ -24,7 +29,10 @@ var app = builder.Build();
     }
 
     app.UseHttpsRedirection();
+    app.UseStaticFiles();
     app.UseAuthorization();
+    app.MapSwagger()
+        .RequireAuthorization();
     app.MapControllers();
 
     app.Run();

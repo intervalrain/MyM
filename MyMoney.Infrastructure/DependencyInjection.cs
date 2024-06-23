@@ -8,6 +8,8 @@ using MyMoney.Infrastructure.Common.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MyMoney.Infrastructure.Security.Tokens;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace MyMoney.Infrastructure;
 
@@ -82,20 +84,22 @@ public static class DependencyInjection
         services.AddScoped<IAuthorizationService, AuthorizationService>();
         services.AddScoped<ICurrentUserProvider, CurrentUserProvider>();
         services.AddSingleton<IPolicyEnforcer, PolicyEnforcer>();
+        services.AddSingleton<IPermissionProvider, PermissionProvider>();
+        services.AddSingleton<IRoleProvider, RoleProvider>();
 
         return services;
     }
 
     private static IServiceCollection AddAuthentication(this IServiceCollection services, IConfiguration configuration)
     {
-        //services.Configure<JwtSettings>(configuration.GetSection(JwtSettings.Section));
+        services.Configure<JwtSettings>(configuration.GetSection(JwtSettings.Section));
 
-        //services.AddSingleton<IJwtTokenGenerator, JwtTokenGenerator>();
+        services.AddScoped<IJwtGenerator, JwtGenerator>();
 
-        //services
-        //    .ConfigureOptions<JwtBearerTokenValidationConfiguration>()
-        //    .AddAuthentication(defaultScheme: JwtBearerDefaults.AuthenticationScheme)
-        //    .AddJwtBearer();
+        services
+            .ConfigureOptions<JwtBearerValidationConfiguration>()
+            .AddAuthentication(defaultScheme: JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer();
 
         return services;
     }

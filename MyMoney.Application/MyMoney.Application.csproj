@@ -13,10 +13,6 @@
     <None Remove="Common\" />
     <None Remove="Common\Interfaces\" />
     <None Remove="Common\Interfaces\Persistence\" />
-    <None Remove="Services\" />
-    <None Remove="Services\Commands\" />
-    <None Remove="Services\Queries\" />
-    <None Remove="Services\Events\" />
     <None Remove="Common\Behaviors\" />
     <None Remove="Common\Security\" />
     <None Remove="Common\Security\Request\" />
@@ -24,18 +20,22 @@
     <None Remove="Common\Security\Policies\" />
     <None Remove="Common\Security\Permissions\" />
     <None Remove="Common\Security\User\" />
-    <None Remove="Services\Commands\CreateTransaction\" />
-    <None Remove="Services\Queries\FetchAllTransactions\" />
-    <None Remove="Services\Queries\GetTransaction\" />
+    <None Remove="Transactions\" />
+    <None Remove="Tokens\" />
+    <None Remove="Tokens\Queries\" />
+    <None Remove="Tokens\Queries\Generate\" />
+    <None Remove="Users\" />
+    <None Remove="Users\Commands\" />
+    <None Remove="Users\Commands\CreateUser\" />
+    <None Remove="Users\Commands\UpgradeUser\" />
+    <None Remove="Accounts\" />
+    <None Remove="Accounts\Commands\" />
+    <None Remove="Accounts\Events\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
     <Folder Include="Common\Interfaces\" />
     <Folder Include="Common\Interfaces\Persistence\" />
-    <Folder Include="Services\" />
-    <Folder Include="Services\Commands\" />
-    <Folder Include="Services\Queries\" />
-    <Folder Include="Services\Events\" />
     <Folder Include="Common\Behaviors\" />
     <Folder Include="Common\Security\" />
     <Folder Include="Common\Security\Request\" />
@@ -44,9 +44,17 @@
     <Folder Include="Common\Security\Permissions\" />
     <Folder Include="Common\Security\User\" />
     <Folder Include="Dtos\" />
-    <Folder Include="Services\Commands\CreateTransaction\" />
-    <Folder Include="Services\Queries\FetchAllTransactions\" />
-    <Folder Include="Services\Queries\GetTransaction\" />
+    <Folder Include="Transactions\" />
+    <Folder Include="Tokens\" />
+    <Folder Include="Tokens\Queries\" />
+    <Folder Include="Tokens\Queries\Generate\" />
+    <Folder Include="Users\" />
+    <Folder Include="Users\Commands\" />
+    <Folder Include="Users\Commands\CreateUser\" />
+    <Folder Include="Users\Commands\UpgradeUser\" />
+    <Folder Include="Accounts\" />
+    <Folder Include="Accounts\Commands\" />
+    <Folder Include="Accounts\Events\" />
   </ItemGroup>
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>

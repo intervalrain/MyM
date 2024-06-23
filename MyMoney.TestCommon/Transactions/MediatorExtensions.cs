@@ -4,10 +4,10 @@ using FluentAssertions;
 
 using MediatR;
 
+using MyMoney.Application;
 using MyMoney.Application.Dtos;
-using MyMoney.Application.Services;
-using MyMoney.Application.Services.CreateTransaction.Commands;
-using MyMoney.Application.Services.FetchAllTransactions.Queries;
+using MyMoney.Application.Transactions.CreateTransaction.Commands;
+using MyMoney.Application.Transactions.FetchAllTransactions.Queries;
 using MyMoney.TestCommon.TestConstants;
 
 namespace MyMoney.TestCommon.Transactions;

@@ -28,6 +28,8 @@
     <None Remove="Persistence\" />
     <None Remove="Common\Services\" />
     <None Remove="Security\" />
+    <None Remove="Security\Tokens\" />
+    <None Remove="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
@@ -36,6 +38,8 @@
     <Folder Include="Persistence\" />
     <Folder Include="Common\Services\" />
     <Folder Include="Security\" />
+    <Folder Include="Security\Tokens\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>

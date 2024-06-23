@@ -1,9 +1,8 @@
-﻿namespace MyMoney.Application.Common.Interfaces;
+﻿using MyMoney.Domain.Enums;
+
+namespace MyMoney.Application.Common.Interfaces;
 
 public interface IPermissionProvider
 {
-    IEnumerable<string> GetAllPermissions();
-
-    IEnumerable<string> GetPermissionsByCategory(string category);
+    IEnumerable<string> GetPermissions(UserType userType);
 }
-

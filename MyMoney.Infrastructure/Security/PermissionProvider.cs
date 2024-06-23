@@ -2,25 +2,33 @@
 
 using MyMoney.Application.Common.Interfaces;
 using MyMoney.Application.Common.Security.Permissions;
+using MyMoney.Domain.Enums;
 
 namespace MyMoney.Infrastructure.Security;
 
 public class PermissionProvider : IPermissionProvider
 {
-    public IEnumerable<string> GetAllPermissions()
+    public IEnumerable<string> GetPermissions(UserType userType)
+    {
+        return userType switch
+        {
+            UserType.Admin => GetAllPermissions(),
+            _ => GetPermissionsByCategory(nameof(Permission))
+        };
+    }
+
+    private IEnumerable<string> GetAllPermissions()
     {
         return GetPermissionsFromNestedTypes(typeof(Permission).GetNestedTypes(BindingFlags.Public | BindingFlags.Static));
     }
 
-    public IEnumerable<string> GetPermissionsByCategory(string category)
+    private IEnumerable<string> GetPermissionsByCategory(string category)
     {
         var nestedType = typeof(Permission).GetNestedType(category, BindingFlags.Public | BindingFlags.Static);
 
-        if (nestedType == null)
-        {
-            throw new ArgumentException($"Category '{category}' not found.");
-        }
-        return GetPermissionsFromNestedTypes(nestedType);
+        return nestedType == null
+            ? throw new ArgumentException($"Category '{category}' not found.")
+            : (IEnumerable<string>)GetPermissionsFromNestedTypes(nestedType);
     }
 
     private static List<string> GetPermissionsFromNestedTypes(params Type[] types)
@@ -43,5 +51,7 @@ public class PermissionProvider : IPermissionProvider
 
         return permissions;
     }
+
+
 }
 

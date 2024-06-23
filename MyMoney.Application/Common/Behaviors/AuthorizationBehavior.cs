@@ -10,7 +10,7 @@ using MyMoney.Application.Common.Security.Request;
 namespace MyMoney.Application.Common.Behaviors;
 
 public class AuthorizationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-    where TRequest : IAuthorizeableRequest<TResponse>
+    where TRequest : Security.Request.IAuthorizeableRequest<TResponse>
     where TResponse : IErrorOr
 {
     private readonly IAuthorizationService _authorizationService;

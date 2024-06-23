@@ -15,9 +15,11 @@
   <ItemGroup>
     <None Remove="Common\" />
     <None Remove="Events\" />
+    <None Remove="Enums\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
     <Folder Include="Events\" />
+    <Folder Include="Enums\" />
   </ItemGroup>
 </Project>

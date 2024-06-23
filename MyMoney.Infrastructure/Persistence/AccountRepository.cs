@@ -13,6 +13,11 @@ public class AccountRepository : GenericRepository<Account>, IAccountRepository
     {
     }
 
+    public async Task AddAccountAsync(Account account, CancellationToken cancellationToken)
+    {
+        await AddAsync(account, cancellationToken);
+    }
+
     public async Task<Account?> GetAccountAsync(Guid id, CancellationToken cancellationToken)
     {
         return await GetByIdAsync(id, cancellationToken);

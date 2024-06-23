@@ -9,9 +9,13 @@
   <ItemGroup>
     <None Remove="Tokens\" />
     <None Remove="Transactions\" />
+    <None Remove="Users\" />
+    <None Remove="Accounts\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tokens\" />
     <Folder Include="Transactions\" />
+    <Folder Include="Users\" />
+    <Folder Include="Accounts\" />
   </ItemGroup>
 </Project>

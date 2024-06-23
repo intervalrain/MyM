@@ -5,5 +5,5 @@ public record TransactionResponse(
     Guid AccountId,
     Guid TransactionId,
     string Category,
-    string Amount,
+    int Amount,
     DateTime DateTime);
