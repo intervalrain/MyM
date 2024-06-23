@@ -22,4 +22,14 @@
     <ProjectReference Include="..\MyMoney.Domain\MyMoney.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Users\" />
+    <None Remove="Transactions\" />
+    <None Remove="Accounts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Users\" />
+    <Folder Include="Transactions\" />
+    <Folder Include="Accounts\" />
+  </ItemGroup>
 </Project>

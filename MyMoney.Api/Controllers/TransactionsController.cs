@@ -1,11 +1,9 @@
 ﻿using MediatR;
 
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 using MyMoney.Application.Common.Interfaces;
 using MyMoney.Application.Common.Security.User;
-using MyMoney.Application.Dtos;
 using MyMoney.Application.Services;
 using MyMoney.Contracts.Transactions;
 using MyMoney.Domain;
@@ -48,4 +46,3 @@ public class TransactionsController : ApiController
         return result.Match(Ok, Problem);
     }
 }
-

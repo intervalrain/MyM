@@ -23,4 +23,12 @@
     <ProjectReference Include="..\MyMoney.TestCommon\MyMoney.TestCommon.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Common\" />
+    <None Remove="Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Controllers\" />
+  </ItemGroup>
 </Project>
