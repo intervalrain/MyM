@@ -28,14 +28,15 @@ public class CreateTransactionCommandHandler : IRequestHandler<CreateTransaction
             return Error.NotFound(description: "User not found");
         }
 
-        if (!user.AccountIds.TryGetValue(request.AccountName, out Guid accountId))
+        var accounts = await _accountRepository.GetAccountsByUserIdAsync(request.UserId, cancellationToken);
+        var account = accounts.FirstOrDefault(a => a.AccountName == request.AccountName);
+
+        if (account == null)
         {
             return Error.NotFound(description: "Account not found");
         }
 
-        var account = await _accountRepository.GetAccountAsync(accountId, cancellationToken);
-
-        var transaction = new Transaction(request.UserId, accountId, request.Category, request.Amount, request.DateTime);
+        var transaction = new Transaction(request.UserId, account.Id, request.Category, request.Amount, request.DateTime);
 
         var result = account!.AddTransaction(transaction);
 

@@ -7,7 +7,7 @@ public class User : Entity
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string Email { get; set; }
-    public Dictionary<string, Guid> AccountIds { get; set; } = new();
+    public List<Guid> AccountIds { get; set; } = new();
 
     public User(Guid? id, string firstName, string lastName, string email)
         : base(id ?? Guid.NewGuid())

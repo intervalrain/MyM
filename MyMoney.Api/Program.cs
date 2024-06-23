@@ -12,11 +12,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 var app = builder.Build();
 {
-    app.UseExceptionHandler();
+    app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
     app.UseInfrastructure();
 
     if (app.Environment.IsDevelopment())
     {
+        app.UseDeveloperExceptionPage();
         app.UseSwagger();
         app.UseSwaggerUI();
     }
